@@ -1,20 +1,14 @@
-let playerSelection = prompt("Please enter your option (either rock, paper or scissors");
-playerSelection = playerSelection.toLowerCase();
-
-let randomNumber = Math.floor(Math.random()*3);
-
-if(randomNumber == 0){
-    randomNumber = "rock";
+var userChoice = prompt("Do you choose rock, paper or scissors?");
+var computerChoice = Math.random();
+if (computerChoice < 0.34) {
+	computerChoice = "rock";
+} else if(computerChoice <= 0.67) {
+	computerChoice = "paper";
+} else {
+	computerChoice = "scissors";
 }
-else if (randomNumber == 1){
-randomNumber = "paper";
-}
-else {
-randomNumber = "scissors";
-}
-console.log(randomNumber);
 
-function playGame(choice1,choice2){
+function compare(choice1,choice2){
     if(choice1===choice2){
         return "The result is a tie!";
     }
@@ -44,5 +38,4 @@ function playGame(choice1,choice2){
     }
     
 }
-console.log(playGame(playerSelection, randomNumber));
-
+console.log(compare(userChoice,computerChoice));
